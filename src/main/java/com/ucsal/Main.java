@@ -1,7 +1,9 @@
 package com.ucsal;
 
+import com.ucsal.factory.TerminalUIFactory;
+
 public class Main {
     static void main(String[] args) {
-        System.out.println("Hello World");
+        TerminalUIFactory.create().start();
     }
 }

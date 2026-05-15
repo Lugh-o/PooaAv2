@@ -5,6 +5,8 @@ public abstract class Product {
     protected String name;
     protected double price;
     protected int quantity;
+
+    // TODO tirar esse negocio
     protected String category;
 
     private static long nextId = 1;

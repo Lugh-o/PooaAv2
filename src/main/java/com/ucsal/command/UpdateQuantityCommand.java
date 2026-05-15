@@ -1,7 +1,10 @@
 package com.ucsal.command;
 
+import com.ucsal.annotation.CommandHandler;
 import com.ucsal.model.Product;
 
+// TODO ignorewarnings
+@CommandHandler("update-product")
 public class UpdateQuantityCommand implements Command {
     private final Product product;
     private final int newQuantity;

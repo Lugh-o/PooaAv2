@@ -1,24 +1,27 @@
 package com.ucsal.command;
 
+import com.ucsal.annotation.CommandHandler;
 import com.ucsal.model.Product;
-import com.ucsal.persistence.Stock;
+import com.ucsal.persistence.StockRepository;
 
+@CommandHandler("add-product")
 public class AddProductCommand implements Command {
-
+    private final StockRepository stock;
     private final Product product;
 
-    public AddProductCommand(Product product) {
+    public AddProductCommand(StockRepository stock, Product product) {
+        this.stock = stock;
         this.product = product;
     }
 
     @Override
     public void execute() {
-        Stock.getInstance().addProduct(product);
+        stock.addProduct(product);
     }
 
     @Override
     public void undo() {
-        Stock.getInstance().removeProduct(product);
+        stock.removeProduct(product);
     }
 
     @Override
